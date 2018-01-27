@@ -1,7 +1,7 @@
 package cn.hdlmx.designPatterns.Oberver;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
-    private float tempperature;
+    private float temperature;
     private float humidity;
     private Subject weatherData;
 
@@ -13,12 +13,12 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     @Override
 
     public void display() {
-        this.toString();
+        System.out.println(this);
     }
 
     @Override
-    public void update(float tempperature, float humidity, float pressure) {
-        this.tempperature = tempperature;
+    public void update(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
         this.humidity = humidity;
         display();
     }
@@ -26,7 +26,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
     @Override
     public String toString() {
         return "CurrentConditionsDisplay{" +
-                "tempperature=" + tempperature +
+                "temperature=" + temperature +
                 ", humidity=" + humidity +
                 ", weatherData=" + weatherData +
                 '}';
